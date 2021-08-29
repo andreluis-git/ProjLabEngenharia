@@ -10,7 +10,7 @@ class ContentPage extends React.Component {
         };
     };
 
-    componentWillMount() {
+    componentDidMount() {
         let produtos = ContentPageService.getProdutos();
         let banner = ContentPageService.getBanner();
         this.setState({
@@ -29,11 +29,11 @@ class ContentPage extends React.Component {
                         </div>
                     }
                     {this.state.produtos.map(produto => (
-                        <div className="card m-1" style={{width: '18rem'}}>
+                        <div className="card m-1" style={{width: '18rem'}} key={produto.key}>
                             <img src={produto.img} className="card-img-top p-1" alt="..." style={{height:'250px'}} />
                             <div className="card-body">
                                 <strong className="card-title">{produto.nome}</strong>
-                                <p className="card-text" style={{color: 'var(--main-color)'}}>R$ {produto.preco.toFixed(2)}</p>
+                                <p className="card-text" style={{color: 'var(--cor-azulEscuro)'}}>R$ {produto.preco.toFixed(2)}</p>
                             </div>
                         </div>  
                     ))}

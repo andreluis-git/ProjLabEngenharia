@@ -10,7 +10,7 @@ class SideMenu extends React.Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.chamaService()
     }
 
@@ -21,11 +21,15 @@ class SideMenu extends React.Component {
         })
     }
 
+    aClick = () => {
+        console.log('Teste')
+    }
+
     render() {
         return (
             <div className='sidenav'>
                 {this.state.categorias.map(categoria => (
-                    <a href="/">{ categoria }</a>
+                    <a href='/#' className="nav-link" onClick={this.aClick} key={categoria}>{ categoria }</a>
                 ))}
                 {/* <button onClick={this.chamaService}>Botao</button> */}
             </div>

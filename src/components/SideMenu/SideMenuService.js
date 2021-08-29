@@ -1,9 +1,8 @@
 const getCategorias = () => {
-    let categorias = [
-        'Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4',
-        'Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4',
-        'Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4'
-    ];
+    let categorias = [];
+    for(let i = 0; i < 12; i++) {
+        categorias.push('Categoria ' + i);
+    }
     return categorias;
 }
 

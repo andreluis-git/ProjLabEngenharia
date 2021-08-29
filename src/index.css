@@ -1,5 +1,9 @@
 :root {
-    --main-color: #002d56
+    --cor-azulEscuro: #041431;
+    --cor-azul: #044176;
+    --cor-rosa: #c0507d;
+    --cor-azulClaro: #54a3b6;
+    --cor-lilas: #a382e0;
 }
 
 body {
