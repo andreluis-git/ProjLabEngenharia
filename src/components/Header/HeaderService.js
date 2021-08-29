@@ -1,5 +1,5 @@
 const getLogo = () => {
-    return 'https://images.pexels.com/photos/430205/pexels-photo-430205.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
+    return 'https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
 }
 
 const HeaderService = {

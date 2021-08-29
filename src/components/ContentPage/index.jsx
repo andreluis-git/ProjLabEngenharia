@@ -5,35 +5,35 @@ class ContentPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            produtos: []
+            produtos: [],
+            banner: ''
         };
     };
 
     componentWillMount() {
         let produtos = ContentPageService.getProdutos();
+        let banner = ContentPageService.getBanner();
         this.setState({
-            produtos: produtos
+            produtos: produtos,
+            banner: banner
         })
     };
-
-    montarContent() {
-        let maxColuns = 4;
-
-        for(let i = 0; i < this.state.produtos.length; i++) {
-
-        }
-    }
 
     render() {
         return (
             <div>
                 <div className="row p-0 m-0 d-flex justify-content-center" style={{minWidth: '80vw'}}>
+                    { this.state.banner && 
+                        <div className='p-2'>
+                            <img src={ this.state.banner } alt='...' style={{maxHeight: '250px', width: '100%'}} />
+                        </div>
+                    }
                     {this.state.produtos.map(produto => (
                         <div className="card m-1" style={{width: '18rem'}}>
                             <img src={produto.img} className="card-img-top p-1" alt="..." style={{height:'250px'}} />
                             <div className="card-body">
                                 <strong className="card-title">{produto.nome}</strong>
-                                <p className="card-text" style={{color: '#ff6500'}}>R$ {produto.preco.toFixed(2)}</p>
+                                <p className="card-text" style={{color: 'var(--main-color)'}}>R$ {produto.preco.toFixed(2)}</p>
                             </div>
                         </div>  
                     ))}

@@ -34,8 +34,13 @@ const getProdutos = () => {
     return produtos;
 }
 
+const getBanner = () => {
+    return "https://images.pexels.com/photos/4092125/pexels-photo-4092125.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+}
+
 const ContentPageService = {
-    getProdutos
+    getProdutos,
+    getBanner
 }
 
 export default ContentPageService;

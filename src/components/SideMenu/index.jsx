@@ -23,7 +23,7 @@ class SideMenu extends React.Component {
 
     render() {
         return (
-            <div className='sidenav border border-secondary'>
+            <div className='sidenav'>
                 {this.state.categorias.map(categoria => (
                     <a href="/">{ categoria }</a>
                 ))}
