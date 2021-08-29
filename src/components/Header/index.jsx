@@ -63,13 +63,13 @@ class Header extends React.Component {
         return (
             <div className='container-fluid bg-secondary'>
                 <div className='row'>
-                    <div className='col-3 p-0'>
+                    <div className='col-2 p-0'>
                         <img src={ this.state.temLogo ? this.state.logo : this.state.logoTeste } alt={ this.state.logo } width='100%' height='100px'/>
                     </div>
-                    <div className='col-6 align-self-center'>
+                    <div className='col-7 align-self-center d-flex justify-content-center'>
                         { this.search() }                    
                     </div>
-                    <div className='col-3 align-self-center'>
+                    <div className='col-3 align-self-center d-flex justify-content-center'>
                         { this.contatos() }
                     </div>
                 </div>

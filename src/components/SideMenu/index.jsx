@@ -10,6 +10,10 @@ class SideMenu extends React.Component {
         }
     }
 
+    componentWillMount() {
+        this.chamaService()
+    }
+
     chamaService = () => {
         let categorias = SideMenuService.getCategorias();
         this.setState({
@@ -19,14 +23,14 @@ class SideMenu extends React.Component {
 
     render() {
         return (
-            <div className='sidenav'>
+            <div className='sidenav border border-secondary'>
                 {this.state.categorias.map(categoria => (
                     <a href="/">{ categoria }</a>
                 ))}
-                <button onClick={this.chamaService}>Botao</button>
+                {/* <button onClick={this.chamaService}>Botao</button> */}
             </div>
         );
-    }
+    };
 }
 
 export default SideMenu;
