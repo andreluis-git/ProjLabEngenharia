@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import ContentPageActions from '../ContentPage/Actions/ContentPageActions';
+import ContentPageService from '../ContentPage/ContentPageService';
 import './SideMenu.css'
 import SideMenuService from './SideMenuService'
 
@@ -21,20 +24,24 @@ class SideMenu extends React.Component {
         })
     }
 
-    aClick = () => {
-        console.log('Teste')
+    getProdutosByCategoria(categoria) {
+        let produtos = ContentPageService.getProdutos(categoria);
+        this.props.setContentPageProdutos(produtos);
     }
 
     render() {
         return (
             <div className='sidenav'>
                 {this.state.categorias.map(categoria => (
-                    <a href='/#' className="nav-link" onClick={this.aClick} key={categoria}>{ categoria }</a>
+                    <a href='/#' className="nav-link" onClick={() => this.getProdutosByCategoria(categoria)} key={categoria}>{ categoria }</a>
                 ))}
-                {/* <button onClick={this.chamaService}>Botao</button> */}
             </div>
         );
     };
 }
 
-export default SideMenu;
+const mapDispatchToProps = dispatch => ({
+    setContentPageProdutos: produtos => dispatch(ContentPageActions.setContentPageProdutos(produtos))
+})
+
+export default connect(null, mapDispatchToProps)(SideMenu);

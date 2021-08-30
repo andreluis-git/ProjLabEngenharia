@@ -1,23 +1,40 @@
 import React from 'react'
 import ContentPageService from './ContentPageService';
 
+import { connect } from 'react-redux'
+// import ContentPageActions from './Actions/ContentPageActions';
+
 class ContentPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             produtos: [],
-            banner: ''
+            banner: '',
+            testeList: ['1','2','3','4','5']
         };
     };
 
+    componentDidUpdate = () => {
+        if (this.props.value !== this.state.produtos) {
+            this.setState({
+                produtos: this.props.value
+            })
+        }
+    }
+
     componentDidMount() {
-        let produtos = ContentPageService.getProdutos();
+        let produtos = this.props.value;
         let banner = ContentPageService.getBanner();
         this.setState({
             produtos: produtos,
             banner: banner
         })
     };
+
+    //redux
+    // testeBotao() {
+    //     this.props.setContentPageProdutos(this.state.testeList);
+    // }
 
     render() {
         return (
@@ -28,6 +45,7 @@ class ContentPage extends React.Component {
                             <img src={ this.state.banner } alt='...' style={{maxHeight: '250px', width: '100%'}} />
                         </div>
                     }
+                    {/* <button onClick={() => this.testeBotao()}>Botao</button> //redux */}
                     {this.state.produtos.map(produto => (
                         <div className="card m-1" style={{width: '18rem'}} key={produto.key}>
                             <img src={produto.img} className="card-img-top p-1" alt="..." style={{height:'250px'}} />
@@ -36,11 +54,18 @@ class ContentPage extends React.Component {
                                 <p className="card-text" style={{color: 'var(--cor-azulEscuro)'}}>R$ {produto.preco.toFixed(2)}</p>
                             </div>
                         </div>  
-                    ))}
-                </div>
+                    ))}</div>
             </div>
         );
     };
 }
 
-export default ContentPage;
+const mapStateToProps = store => ({
+    value: store.contentPageReducer.produtos
+})
+
+// const mapDispatchToProps = dispatch => ({
+//     setContentPageProdutos: produtos => dispatch(ContentPageActions.setContentPageProdutos(produtos))
+// })
+
+export default connect(mapStateToProps)(ContentPage);

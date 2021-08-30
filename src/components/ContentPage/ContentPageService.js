@@ -1,12 +1,36 @@
-const getProdutos = () => {
+const getProdutos = (categoria) => {
     let produtos = [];
-    for(let i = 0; i < 12; i++) {
-        produtos.push({
-            img: 'https://images.pexels.com/photos/5797939/pexels-photo-5797939.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-            nome: 'Notebook ' + i,
-            preco: Math.random() * (13000 - 1500) + 1500,
-            key: i
-        })
+    switch(categoria) {
+        case 'Categoria 0':
+            for(let i = 0; i < 12; i++) {
+                produtos.push({
+                    img: 'https://images.pexels.com/photos/5797939/pexels-photo-5797939.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+                    nome: 'Notebook ' + i,
+                    preco: Math.random() * (13000 - 1500) + 1500,
+                    key: i
+                })
+            }
+            break;
+        case 'Categoria 1':
+            for(let i = 0; i < 12; i++) {
+                produtos.push({
+                    img: 'https://images.pexels.com/photos/2386687/pexels-photo-2386687.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                    nome: 'Notebook ' + i,
+                    preco: Math.random() * (13000 - 1500) + 1500,
+                    key: i
+                })
+            }
+            break;
+        default:
+            for(let i = 0; i < 12; i++) {
+                produtos.push({
+                    img: 'https://images.pexels.com/photos/5797939/pexels-photo-5797939.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
+                    nome: 'Notebook ' + i,
+                    preco: Math.random() * (13000 - 1500) + 1500,
+                    key: i
+                })
+            }
+            break;
     }
     return produtos;
 }
