@@ -22,12 +22,12 @@ class ContentPage extends React.Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         let produtos = this.props.value;
-        let banner = ContentPageService.getBanner();
+        let banner = await ContentPageService.getBanner();
         this.setState({
             produtos: produtos,
-            banner: banner
+            banner: banner.banner
         })
     };
 

@@ -26,4 +26,5 @@
     border-right: 5px solid white;
     color: white;
     background-color: var(--cor-azul);
+    transition: 0.2s;
 }

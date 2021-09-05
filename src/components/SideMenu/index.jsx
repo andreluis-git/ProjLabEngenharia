@@ -17,8 +17,8 @@ class SideMenu extends React.Component {
         this.chamaService()
     }
 
-    chamaService = () => {
-        let categorias = SideMenuService.getCategorias();
+    async chamaService(){
+        let categorias = await SideMenuService.getCategorias();
         this.setState({
             categorias: categorias
         })

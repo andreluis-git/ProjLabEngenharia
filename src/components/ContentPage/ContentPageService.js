@@ -1,3 +1,7 @@
+import axios from 'axios'
+
+let url = 'http://localhost:8080/api';
+
 const getProdutos = (categoria) => {
     let produtos = [];
     switch(categoria) {
@@ -35,9 +39,19 @@ const getProdutos = (categoria) => {
     return produtos;
 }
 
-const getBanner = () => {
-    return "https://images.pexels.com/photos/4092125/pexels-photo-4092125.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-}
+// const getBanner = () => {
+//     return "https://images.pexels.com/photos/4092125/pexels-photo-4092125.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+// }
+
+const getBanner = () => new Promise((resolve, reject) => {
+    axios.get(url + '/loja')
+        .then(result => {
+            resolve(result.data)
+        })
+        .catch(error => {
+            reject(error)
+        })
+});
 
 const ContentPageService = {
     getProdutos,

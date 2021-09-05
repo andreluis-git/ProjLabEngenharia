@@ -14,8 +14,8 @@ class Header extends React.Component {
         }
     }
 
-    componentDidMount() {
-        let logo = HeaderService.getLogo()
+    async componentDidMount() {
+        let logo = await HeaderService.getLogo()
         this.setState({
             logo: logo
         })
