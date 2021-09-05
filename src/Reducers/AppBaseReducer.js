@@ -14,8 +14,18 @@ const initialState = {
 const AppBaseReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SET_APP_BASE:
-            console.log('Action Base', action.value)
-            return state;
+            let { logo, banner, categorias, instagram, facebook, whatsapp } = action.value
+            const { base } = state
+            action.value.logo = logo ? logo : base.logo;
+            action.value.banner = banner ? banner: base.banner;
+            action.value.categorias = categorias ? categorias : base.categorias;
+            action.value.instagram = instagram ? instagram : base.instagram;
+            action.value.facebook = facebook ? facebook : base.facebook;
+            action.value.whatsapp = whatsapp ? whatsapp : base.whatsapp;
+            return {
+                ...state,
+                base: action.value
+            };
         default:
             return state;
     }

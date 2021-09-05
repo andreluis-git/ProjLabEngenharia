@@ -27,7 +27,7 @@ class ContentPage extends React.Component {
         let banner = await ContentPageService.getBanner();
         this.setState({
             produtos: produtos,
-            banner: banner.banner
+            banner: banner
         })
     };
 

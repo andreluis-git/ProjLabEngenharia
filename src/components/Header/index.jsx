@@ -1,7 +1,11 @@
 
 import React, { Fragment } from 'react';
-import HeaderService from './HeaderService';
+// import HeaderService from './HeaderService';
 import './Header.css'
+
+import { connect } from 'react-redux';
+import AppBaseActions from '../../Reducers/Actions/AppBaseActions';
+import AppService from '../../AppService';
 
 class Header extends React.Component {
     constructor(props) {
@@ -12,13 +16,21 @@ class Header extends React.Component {
             temLogo: true,
             iconColor: 'white'
         }
+        // let cliente = 1;
+    }
+
+    async getBase(cliente) {
+        let base = await AppService.getBase(cliente);
+        this.props.setAppBase(base);
     }
 
     async componentDidMount() {
-        let logo = await HeaderService.getLogo()
+        // let logo = await HeaderService.getLogo();
+        // console.log('logo',this.props.logo)
         this.setState({
-            logo: logo
-        })
+            logo: this.props.logo
+        });
+        this.getBase();
     }
     
     search = () => {
@@ -79,4 +91,12 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+const mapStateToProps = store => ({
+    logo: store.appBaseReducer.base.logo
+})
+
+const mapDispatchToProps = dispatch => ({
+    setAppBase: base => dispatch(AppBaseActions.setAppBase(base))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
