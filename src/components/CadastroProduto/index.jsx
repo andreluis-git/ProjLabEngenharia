@@ -7,11 +7,7 @@ import { useForm } from 'react-hook-form'
 
 export default () => {
 
-    let history = useHistory()
-
     const { register, handleSubmit, formState: { errors } } = useForm()
-
-    //const addPost = data => console.log(data)
 
     const addPost = data => {
         let formdata = new FormData();
@@ -35,9 +31,6 @@ export default () => {
         console.log("DEU ERRADO", formdata)
     })}
     
-
-
-
     return (
         <div class="container">
             <form onSubmit={handleSubmit(addPost)}>

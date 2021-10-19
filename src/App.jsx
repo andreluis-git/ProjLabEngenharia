@@ -4,8 +4,8 @@ import Header from './components/Header'
 import SideMenu from './components/SideMenu'
 import ContentPage from './components/ContentPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import User from './components/User';
-import Loja from './components/Loja';
+import CadastroProduto from './components/CadastroProduto';
+import CadastroLoja from './components/CadastroLoja';
 
 import './App.css'
 
@@ -28,8 +28,8 @@ export default function App() {
                             </div>
                         </div>
                 </Route>
-                <Route exact path="/user" component={User} />
-                <Route exact path="/loja" component={Loja} />
+                <Route exact path="/cadastro_produto" component={CadastroProduto} />
+                <Route exact path="/cadastro_loja" component={CadastroLoja} />
             </Switch>
         </Router>
     );
