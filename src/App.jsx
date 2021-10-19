@@ -5,6 +5,7 @@ import SideMenu from './components/SideMenu'
 import ContentPage from './components/ContentPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import User from './components/User';
+import Loja from './components/Loja';
 
 import './App.css'
 
@@ -28,6 +29,7 @@ export default function App() {
                         </div>
                 </Route>
                 <Route exact path="/user" component={User} />
+                <Route exact path="/loja" component={Loja} />
             </Switch>
         </Router>
     );
