@@ -8,8 +8,8 @@ const getProdutos = (categoria) => {
         case 'Categoria 0':
             for(let i = 0; i < 12; i++) {
                 produtos.push({
-                    img: 'https://images.pexels.com/photos/5797939/pexels-photo-5797939.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-                    nome: 'Notebook ' + i,
+                    img: 'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_960_720.jpg',
+                    nome: i,
                     preco: Math.random() * (13000 - 1500) + 1500,
                     key: i
                 })
@@ -18,8 +18,8 @@ const getProdutos = (categoria) => {
         case 'Categoria 1':
             for(let i = 0; i < 12; i++) {
                 produtos.push({
-                    img: 'https://images.pexels.com/photos/2386687/pexels-photo-2386687.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                    nome: 'Livro ' + i,
+                    img: 'https://cdn.pixabay.com/photo/2021/09/17/10/55/caiman-lizard-6632344__340.jpg',
+                    nome: i,
                     preco: Math.random() * (13000 - 1500) + 1500,
                     key: i
                 })
@@ -28,8 +28,8 @@ const getProdutos = (categoria) => {
         case 'Categoria 2':
             for(let i = 0; i < 12; i++) {
                 produtos.push({
-                    img: 'https://coolicias.ao/wp-content/uploads/2019/11/Receita-de-Pizza-de-Pepperoni-na-Fritadeira-El%C3%A9trica-1200x900.jpg',
-                    nome: 'Pizza ' + i,
+                    img: 'https://cdn.pixabay.com/photo/2016/02/19/11/53/pug-1210025__340.jpg',
+                    nome: i,
                     preco: Math.random() * (13000 - 1500) + 1500,
                     key: i
                 })
@@ -38,8 +38,8 @@ const getProdutos = (categoria) => {
         case 'Categoria 3':
             for(let i = 0; i < 12; i++) {
                 produtos.push({
-                    img: 'https://images-americanas.b2w.io/spacey/acom/2021/03/30/ihpone12.webp',
-                    nome: 'Smartphone ' + i,
+                    img: 'https://cdn.pixabay.com/photo/2014/03/29/09/17/cat-300572__340.jpg',
+                    nome: i,
                     preco: Math.random() * (13000 - 1500) + 1500,
                     key: i
                 })
@@ -48,8 +48,8 @@ const getProdutos = (categoria) => {
         case 'Categoria 4':
             for(let i = 0; i < 12; i++) {
                 produtos.push({
-                    img: 'https://static.dafiti.com.br/p/Rebento-T%C3%AAnis-Sneaker-Leve-Masculino-Conforto-Preto-8923-3237736-1-zoom.jpg',
-                    nome: 'Tenis ' + i,
+                    img: 'https://cdn.pixabay.com/photo/2016/01/05/17/51/maltese-1123016__340.jpg',
+                    nome: i,
                     preco: Math.random() * (13000 - 1500) + 1500,
                     key: i
                 })
@@ -58,8 +58,8 @@ const getProdutos = (categoria) => {
         case 'Categoria 5':
             for(let i = 0; i < 12; i++) {
                 produtos.push({
-                    img: 'https://s2.glbimg.com/iJTMoECpJBloHIO1yURH-M5KHZY=/0x0:4000x2664/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2017/o/u/BnAAfZQZyqtmRSQ1fjWQ/5d-mark-iii-foto-de-abre.jpg',
-                    nome: 'Câmera ' + i,
+                    img: 'https://cdn.pixabay.com/photo/2016/03/27/21/16/pet-1284307__340.jpg',
+                    nome: i,
                     preco: Math.random() * (13000 - 1500) + 1500,
                     key: i
                 })
@@ -68,8 +68,8 @@ const getProdutos = (categoria) => {
         default:
             for(let i = 0; i < 12; i++) {
                 produtos.push({
-                    img: 'https://images.pexels.com/photos/5797939/pexels-photo-5797939.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-                    nome: 'Notebook ' + i,
+                    img: 'https://cdn.pixabay.com/photo/2017/01/20/21/22/kitten-asleep-in-a-pot-1995961__340.jpg',
+                    nome: i,
                     preco: Math.random() * (13000 - 1500) + 1500,
                     key: i
                 })
@@ -80,7 +80,7 @@ const getProdutos = (categoria) => {
 }
 
 const getBanner = () => {
-    return "https://www.mercadodaretifica.com.br/wp-content/uploads/2016/08/banner-promocao-08-2016.jpg"
+    return "https://cdn.pixabay.com/photo/2016/03/03/08/40/banner-1233711__340.jpg"
 }
 
 // const getBanner = () => new Promise((resolve, reject) => {

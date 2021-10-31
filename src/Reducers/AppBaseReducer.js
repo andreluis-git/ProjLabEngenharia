@@ -2,7 +2,7 @@ import actionTypes from './Actions/actionTypes'
 
 const initialState = {
     base: {
-        logo: "https://img.freepik.com/free-psd/fire-logo_253059-60.jpg?size=626&ext=jpg",
+        logo: "https://cdn.pixabay.com/photo/2018/04/21/17/57/pet-3339032__340.png",
         banner: "",
         categorias: [],
         instagram: "",
