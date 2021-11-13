@@ -6,9 +6,10 @@ const addPost = data => {
         nome: data["nomeProduto"],
         preco: data["precoProduto"],
         descricao: data["descricaoProduto"],
+        categoria: "categoria1"
     }
     formdata.append("form", JSON.stringify(requestJson))
-    formdata.append("imgBanner", data["imagem"][0])
+    formdata.append("imgProduto", data["imagem"][0])
 
     //console.log(data["imagem"][0])
     // for(var key of formdata.entries()){
@@ -19,7 +20,7 @@ const addPost = data => {
         method: "post",
         url: "http://localhost:8080/api/gerente/cadastrar/produto",
         data: formdata,
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { "Content-Type": "multipart/form-data"  },
     })
     .then(() => {
         console.log("Deu tudo certo", formdata)
