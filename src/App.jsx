@@ -5,8 +5,11 @@ import SideMenu from './components/SideMenu'
 import ContentPage from './components/ContentPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CadastroProduto from './components/CadastroProduto';
+import Cadastro from './components/Cadastro';
+import LoginScreen from './components/Login';
+import Navbar from './components/NavBar/';
+import Home from './components/Home';
 import CadastroLoja from './components/CadastroLoja';
-
 import './App.css'
 
 export default function App() {
@@ -30,6 +33,9 @@ export default function App() {
                 </Route>
                 <Route exact path="/cadastro_produto" component={CadastroProduto} />
                 <Route exact path="/cadastro_loja" component={CadastroLoja} />
+                <Route exact path="/cadastro" component={Cadastro} />
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/login" component={LoginScreen} />
             </Switch>
         </Router>
     );

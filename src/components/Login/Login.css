@@ -1,0 +1,38 @@
+.containerD{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    background-color: #444444;
+}
+.centraliza{
+    justify-content: center;
+    align-items: center;
+}
+.forms2{
+    margin-top: 7%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.button2{
+    justify-content: center;
+    align-items: center;
+    display:flex;
+}
+.labels{
+    color:white;
+}
+.containerform{
+    background-color: #2c2d33;
+    border-radius: 2%;
+    height: 450px;
+    width: 450px;
+}
+.labelcad{
+    color: #047dc4;
+    text-decoration: none;
+}
+.containercad{
+    margin-top: 3%;
+    margin-left: 5%;
+}

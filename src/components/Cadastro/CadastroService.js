@@ -27,8 +27,8 @@ const addPost = data => {
     })
 }
 
-const CadastroLojaSerice = {
+const CadastroService = {
     addPost
 }
 
-export default CadastroLojaSerice;
+export default CadastroService;

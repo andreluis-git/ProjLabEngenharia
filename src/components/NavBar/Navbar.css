@@ -1,0 +1,30 @@
+.sidenav {
+    height: 100%;
+    width: 100%;
+    background-color: var(--cor-azulEscuro);
+    border: 1px solid;
+}
+
+.sidenav a {
+    padding: 5px;
+    padding-left: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--cor-azulEscuro);
+    display: block;
+    border-bottom: 1px solid;
+    border-color: var(--cor-azulEscuro);
+    background-color: #E6E6E6;
+}
+
+.sidenav a:hover {
+    background-color: var(--cor-azul);
+    color: white;
+}
+
+.sidenav a:focus {
+    border-right: 5px solid white;
+    color: white;
+    background-color: var(--cor-azul);
+    transition: 0.2s;
+}
