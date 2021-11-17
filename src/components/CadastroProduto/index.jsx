@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import CadastroProdutoSerice from './CadastroProdutoService'
-import '../Cadastro/Cadastro.css';
+import './CadastroProduto.css';
 
 // class CadastroProduto extends React.Component {
 //     constructor(props) {
@@ -139,42 +139,48 @@ export default () => {
     return (
         <div className='header2' style={{backgroundColor:'#444444'}}>
             <div className='header2 d-flex ' style={{color:'white'}}>
-                <h3 className='p-1 '>Cadastro</h3>
+                <h3>Cadastro</h3>
             </div>
             <div className="containerDE2">
-                <form className=' container justify-content-sm-center' data-toggle="validator" onSubmit={handleSubmit(CadastroProdutoSerice.addPost)}>
-                <div className='backgr '>
-                    <div>
-                        <h4>Cadastro de Produto</h4>
+                <form className='container justify-content-sm-center' onSubmit={handleSubmit(CadastroProdutoSerice.addPost)}>
+                    <div className='backgr '>
+                        <div>
+                            <h4>Cadastro de Produto</h4>
+                        </div>
+                        <div class=" mt-3 mb-3 ">
+                            <label for="exampleInputEmail1">Nome do Produto</label>
+                            <input required id="nomeProduto" class="form-control" type="text" {...register("nomeProduto")}/>
+                        </div>
+                        <div class=" mt-3 mb-3">
+                            <label for="exampleInputEmail1">Preço do Produto</label>
+                            <input  id="precoProduto" class="form-control" type="text" {...register("precoProduto")}/>
+                        </div>
+                        <div class="mt-3 mb-3 ">
+                            <label for="exampleInputEmail1">Descrição do produto</label>
+                            <input  id="descricaoProduto" class="form-control" type="text" {...register("descricaoProduto")}/>
+                        </div>
+                        <div class='mt-3 mb-3 row'>
+                            <div class='col-sm-6'>
+                                <label for="exampleInputEmail1">Categoria do produto</label>
+                                <input  id="descricaoProduto" class="form-control" type="text" {...register("descricaoProduto")}/>
+                            </div>
+                            <div class='col-sm-6'>
+                                <label for="exampleInputEmail1">Categorias</label>
+                                <select className="form-control" id="exampleFormControlSelect1">
+                                    <option>Doces</option>
+                                    <option>Salgados</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="mt-3 mb-3">
+                            <label for="exampleFormControlFile1">Imagem do produto</label>
+                            <input id="imagemProduto" type="file" {...register("imagem")} className="form-control-file"/>
+                        </div>
+                        <div class="d-flex justify-content-center mt-5 mb-5">
+                            <button class="btn btn-secondary btn-md btn-block " style={{backgroundColor:'#2c2d33'}}>Cancelar</button>
+                            <button type="submit" class="btn btn-secondary btn-md btn-block button3" style={{backgroundColor:'#2c2d33'}}>Salvar</button>
+                        </div>
                     </div>
-                    <div class=" mt-3 mb-3 ">
-                        <label for="exampleInputEmail1">Nome do Produto</label>
-                        <input required id="nomeProduto" class="form-control" type="text" {...register("nomeProduto")}/>
-                    </div>
-                    <div class=" mt-3 mb-3">
-                        <label for="exampleInputEmail1">Preço do Produto</label>
-                        <input  id="precoProduto" class="form-control" type="text" {...register("precoProduto")}/>
-                    </div>
-                    <div class="mt-3 mb-3 ">
-                        <label for="exampleInputEmail1">Descrição do produto</label>
-                        <input  id="descricaoProduto" class="form-control" type="text" {...register("descricaoProduto")}/>
-                    </div>
-                    <div class='mt-3 mb-3'>
-                        <label for="exampleInputEmail1">Categoria</label>
-                        <select className="form-control" id="exampleFormControlSelect1">
-                            <option>Doces</option>
-                            <option>Salgados</option>
-                        </select>
-                    </div>
-                    <div className="mt-3 mb-3">
-                        <label for="exampleFormControlFile1">Imagem do produto</label>
-                        <input id="imagemProduto" type="file" {...register("imagem")} className="form-control-file"/>
-                    </div>
-                    <div class="d-flex justify-content-center mt-5 mb-5">
-                        <button type="submit" class="btn btn-secondary btn-md btn-block " style={{backgroundColor:'#2c2d33'}}>Cancelar</button>
-                        <button type="submit" class="btn btn-secondary btn-md btn-block button3" style={{backgroundColor:'#2c2d33'}}>Salvar</button>
-                    </div>
-                </div>
                 </form>
             </div>
         </div> 

@@ -9,8 +9,9 @@ import Cadastro from './components/Cadastro';
 import LoginScreen from './components/Login';
 import Navbar from './components/NavBar/';
 import Home from './components/Home';
-import CadastroLoja from './components/CadastroLoja';
 import './App.css'
+import AlterarLoja from './components/AlterarLoja';
+import CadastroLoja from './components/CadastroLoja';
 
 export default function App() {
     return (
@@ -33,6 +34,7 @@ export default function App() {
                 </Route>
                 <Route exact path="/cadastro_produto" component={CadastroProduto} />
                 <Route exact path="/cadastro_loja" component={CadastroLoja} />
+                <Route exact path="/alterar_loja" component={AlterarLoja} />
                 <Route exact path="/cadastro" component={Cadastro} />
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/login" component={LoginScreen} />

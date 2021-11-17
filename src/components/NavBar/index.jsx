@@ -33,8 +33,8 @@ class SideMenu extends React.Component {
         return (
 
                         <div className='sidenav'>
-                            <a href='/cadastro_produto' className="nav-link" >Cadastrar Loja</a>
-                            <a href='/cadastro_loja' className="nav-link" >Alterar Loja</a>
+                            <a href='/cadastro_loja' className="nav-link" >Cadastrar Loja</a>
+                            <a href='/alterar_loja' className="nav-link" >Alterar Loja</a>
                             <a href='/cadastro_produto' className="nav-link" >Cadastrar Produto</a>
                         </div>
         );
