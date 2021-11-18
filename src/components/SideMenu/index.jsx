@@ -1,47 +1,44 @@
-import React from 'react'
-import { connect } from 'react-redux';
-import ContentPageActions from '../ContentPage/Actions/ContentPageActions';
-import ContentPageService from '../ContentPage/ContentPageService';
+import React, { useEffect, useState } from 'react'
 import './SideMenu.css'
-import SideMenuService from './SideMenuService'
+import SideMenuService from './SideMenuService';
+import { useHistory } from 'react-router-dom';
+import { Sidenav, Nav } from 'rsuite';
 
-class SideMenu extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            categorias: []
-        }
+const SideMenu = (props) => {
+
+    const history = useHistory();
+
+    const  [categorias, setCategorias] = useState([]);    
+
+    const chamaService = async () => {
+        SideMenuService.getCategorias().then(data => setCategorias(data))
+    }
+    
+    useEffect(() => {
+        chamaService();
+    }, [])
+    
+    console.log(categorias)
+
+    const teste = (categoria) => {
+        history.push("/" + categoria.replace(/[^\w\s]/gi, ''))
     }
 
-    componentDidMount() {
-        this.chamaService()
-    }
-
-    async chamaService(){
-        let categorias = await SideMenuService.getCategorias();
-        this.setState({
-            categorias: categorias
-        })
-    }
-
-    getProdutosByCategoria(categoria) {
-        let produtos = ContentPageService.getProdutos(categoria);
-        this.props.setContentPageProdutos(produtos);
-    }
-
-    render() {
-        return (
-            <div className='sidenav'>
-                {this.state.categorias.map(categoria => (
-                    <a href='/#' className="nav-link" onClick={() => this.getProdutosByCategoria(categoria)} key={categoria}>{ categoria }</a>
-                ))}
-            </div>
-        );
-    };
+    return (
+        <div style={{ width: "100%" }}>
+        <Sidenav defaultOpenKeys={['3', '4']} activeKey="1">
+          <Sidenav.Body>
+            <Nav>
+            {props.categorias && props.categorias.map((categoria, index) => (
+                <Nav.Item eventKey={index} onClick={() => {teste(categoria)}}>
+                    {categoria}
+                </Nav.Item> 
+            ))}
+            </Nav>
+          </Sidenav.Body>
+        </Sidenav>
+      </div>
+    );
 }
 
-const mapDispatchToProps = dispatch => ({
-    setContentPageProdutos: produtos => dispatch(ContentPageActions.setContentPageProdutos(produtos))
-})
-
-export default connect(null, mapDispatchToProps)(SideMenu);
+export default SideMenu;

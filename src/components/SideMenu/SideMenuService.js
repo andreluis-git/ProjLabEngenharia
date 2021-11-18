@@ -4,7 +4,7 @@ const getCategorias = () =>
     new Promise((resolve, reject) => {
         let categorias = [];
         for(let i = 0; i < 12; i++) {
-            categorias.push('Categoria ' + i);
+            categorias.push('Categoria_' + i);
         }
         resolve(categorias);
         // axios.get('http://localhost:8080/api/categorias')
