@@ -4,7 +4,6 @@
 
 const getProdutos = (categoria) => {
     let produtos = [];
-    console.log(categoria)
     switch(categoria) {
         case 'Categoria 0':
             for(let i = 0; i < 12; i++) {
