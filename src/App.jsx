@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Header from './components/Header'
 import SideMenu from './components/SideMenu'
@@ -12,24 +12,42 @@ import Home from './components/Home';
 import './App.css'
 import AlterarLoja from './components/AlterarLoja';
 import CadastroLoja from './components/CadastroLoja';
+import Login from './components/Login';
 
-export default function App() {
+import SideMenuService from './components/SideMenu/SideMenuService';
+
+function App() {
+    const [token, setToken] = useState();
+    const  [categorias, setCategorias] = useState([]);    
+    
+    const chamaService = async () => {
+        SideMenuService.getCategorias().then(data => setCategorias(data))
+    }
+
+    useEffect(() => {
+        chamaService();
+        setToken(true);
+    }, [])
+
+    if(!token) {
+        return <Login />
+    }    
+
     return (
-        <Router>
-            <Switch>
-                <Route exact path="/">
-                        <div className="container-fluid">
-                            <div className="row">
-                                <Header/>
-                            </div>
-                            <div className="row">
-                                <div className="col-2 p-0" style={{backgroundColor: 'red'}}>
-                                    <SideMenu />
-                                </div>
-                                <div className="col-9">
-                                    <ContentPage/>
-                                </div>
-                            </div>
+        <div className="container-fluid">
+            <Router>
+                <div className="row">
+                    <Header/>
+                </div>
+                <div className="row">
+                    <div className="col-2 p-0">
+                        <SideMenu categorias={categorias} />
+                    </div>
+                    <Switch>
+                        <div className="col-9">
+                            {categorias && categorias.map((categoria, index) => (
+                                <Route exact path={"/"+  categoria} component={ContentPage} />
+                            ))}                            
                         </div>
                 </Route>
                 <Route exact path="/cadastro_produto" component={CadastroProduto} />
@@ -39,6 +57,10 @@ export default function App() {
                 <Route exact path="/home" component={Home} />
                 <Route exact path="/login" component={LoginScreen} />
             </Switch>
-        </Router>
+            </div>
+          </Router>
+        </div>
     );
 }
+
+export default App;
