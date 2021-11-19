@@ -5,11 +5,15 @@ import SideMenu from './components/SideMenu'
 import ContentPage from './components/ContentPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import CadastroProduto from './components/CadastroProduto';
+import Cadastro from './components/Cadastro';
+import LoginScreen from './components/Login';
+import Navbar from './components/NavBar/';
+import Home from './components/Home';
+import './App.css'
+import AlterarLoja from './components/AlterarLoja';
 import CadastroLoja from './components/CadastroLoja';
-
 import Login from './components/Login';
 
-import './App.css'
 import SideMenuService from './components/SideMenu/SideMenuService';
 
 function App() {
@@ -45,11 +49,16 @@ function App() {
                                 <Route exact path={"/"+  categoria} component={ContentPage} />
                             ))}                            
                         </div>
-                        <Route exact path="/cadastro_produto" component={CadastroProduto} />
-                        <Route exact path="/cadastro_loja" component={CadastroLoja} />
-                    </Switch>
-                </div>
-            </Router>
+                </Route>
+                <Route exact path="/cadastro_produto" component={CadastroProduto} />
+                <Route exact path="/cadastro_loja" component={CadastroLoja} />
+                <Route exact path="/alterar_loja" component={AlterarLoja} />
+                <Route exact path="/cadastro" component={Cadastro} />
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/login" component={LoginScreen} />
+            </Switch>
+            </div>
+          </Router>
         </div>
     );
 }

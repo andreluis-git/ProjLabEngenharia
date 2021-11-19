@@ -1,0 +1,24 @@
+.header2{
+    background-color:#2c2d33;
+    justify-content: center;
+    align-items: center;
+}
+.backgr{
+    background-color:white;
+    padding: 5%;
+}
+.labelBlack{
+    color:black;
+}
+.containerDE{
+    height: 100%;
+    background-color: #444444;
+    justify-content: center;
+    align-items: center;
+}
+.containerDE2{
+    height: 100vh;
+    background-color: #444444;
+    justify-content: center;
+    align-items: center;
+}

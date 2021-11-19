@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const addPost = data => {
+const alterPost = data => {
     let formdata = new FormData();
     let requestJson = {
         nome: data["nome"],
@@ -27,8 +27,8 @@ const addPost = data => {
     })
 }
 
-const CadastroLojaService = {
-    addPost
+const AlterService = {
+    alterPost
 }
 
-export default CadastroLojaService;
+export default AlterService;

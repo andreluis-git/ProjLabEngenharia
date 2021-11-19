@@ -1,18 +1,16 @@
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
-const addPost = data => {
+const AddPost = data => {
+    const history = useHistory();
     let formdata = new FormData();
     let requestJson = {
-        nome: data["nome"],
-        facebook: data["facebook"],
-        instagram: data["instagram"],
-        whatsapp: data["celular"],
-        email: data["email"]
+        nome: data["nomeUsuario"],
+        email: data["email"],
+        senha: data["senha"],
     }
     formdata.append("form", JSON.stringify(requestJson))
-    formdata.append("imgLogo", data["imagemLogo"][0])
-    formdata.append("imgBanner", data["imagemBanner"][0])
-    
+
     axios({
         method: "post",
         url: "http://localhost:8080/api/gerente/cadastrar/loja",
@@ -23,12 +21,13 @@ const addPost = data => {
         console.log("Deu tudo certo", formdata)
     })
     .catch(() => {
+        history.push('/login')
         console.log("DEU ERRADO", formdata)
     })
 }
 
-const CadastroLojaService = {
-    addPost
+const CadastroService = {
+    AddPost
 }
 
-export default CadastroLojaService;
+export default CadastroService;
